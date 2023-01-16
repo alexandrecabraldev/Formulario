@@ -3,6 +3,7 @@ export const defaultTheme={
     lightBlue: "#BFD7E4",
     orange: "#F67669",
     white: "#FFFFFF",
+
     borderInput:"#E6E6F0",
     backgroundInput: "#FAFAFC",
     colorTextSpan: "#253B51"

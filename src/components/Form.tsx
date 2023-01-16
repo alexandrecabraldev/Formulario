@@ -22,13 +22,17 @@ const FormContainer = styled.form`
         font-family: 'Poppins', sans-serif;
         font-size: 0.875rem;
         padding-bottom: 0.5rem;
+        line-height: 1.5rem;
     }
+    
 
-    input{
+    input[type="text"],  input[type="email"]{
         height: 3.4rem;
         border-radius: 8px;
         border: 1px solid ${props=>props.theme.borderInput};
         background-color: ${props=>props.theme.backgroundInput};
+        padding: 0 0.5rem;
+        font-size: 1rem
     }
 
     input[title="mentor"]{
@@ -45,6 +49,10 @@ const FormContainer = styled.form`
         font-size: 1.5rem;
         color: ${props=>props.theme.colorTextSpan}
     }
+
+    textarea{
+        margin-bottom: 1.9rem;
+    }
         
    
 `;
@@ -56,21 +64,49 @@ const DivContainer = styled.div`
     margin-bottom: 1rem;
 `;
 
+const FeedBackContainer = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    label[id="labelCheckBox"]{
+        padding: 0;
+    }
+
+    input[id="checkbox"]{
+        border-radius: 8px;
+        border: 1px solid ${props=>props.theme.borderInput};
+        background-color: ${props=>props.theme.backgroundInput};
+        width: 1.5rem;
+        height: 1.5rem;
+        cursor: pointer;
+        //ajeitar o checkbox
+    }
+`;
+
+const NameContainer =styled.div`
+    display: flex;
+    flex:2;
+    flex-direction: column;
+`;
+
+
+
 
 export function Form(){
     return(
         <FormContainer>
             
             <DivContainer>
-                <div>
+                <NameContainer>
                     <label htmlFor="Nome">Nome</label>
                     <input type="text" title="Nome" id="Nome"/>
-                </div>
+                </NameContainer>
                 
-                <div>
+                <NameContainer>
                     <label htmlFor="Sobrenome">Sobrenome</label>
                     <input type="text" title="Sobrenome"/>
-                </div>
+                </NameContainer>
             </DivContainer>
 
             <label htmlFor="Email">Email</label>
@@ -84,10 +120,10 @@ export function Form(){
             <label htmlFor="">Feedback sobre o mentor</label>
             <textarea name="" id="" title="textArea"></textarea>
 
-            <div>
-                <input type="checkbox" name="" id="" title="checkbox"/>
-                <label htmlFor="">Todas as minhas dúvidas foram esclarecidas durante a mentoria.</label>
-            </div>
+            <FeedBackContainer>
+                <input type="checkbox" name="" id="checkbox" title="checkbox"/>
+                <label htmlFor="checkbox" id="labelCheckBox">Todas as minhas dúvidas foram esclarecidas durante a mentoria.</label>
+            </FeedBackContainer>
 
         </FormContainer>
     );
