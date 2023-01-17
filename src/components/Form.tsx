@@ -12,7 +12,6 @@ const FormContainer = styled.form`
     margin: auto;
     border-radius: 0 0 20px 20px;
 
-  
 
     label{
         text-align: start;
@@ -23,7 +22,7 @@ const FormContainer = styled.form`
     }
     
 
-    input[type="text"],  input[type="email"]{
+    input[type="text"],  input[type="email"], input[type="date"]{
         height: 3.4rem;
         border-radius: 8px;
         border: 1px solid ${props=>props.theme.borderInput};
@@ -31,6 +30,7 @@ const FormContainer = styled.form`
         padding: 0 0.5rem;
         font-size: 1rem
     }
+
 
     input[title="mentor"]{
         margin-bottom: 1.9rem;
@@ -67,9 +67,15 @@ const FormContainer = styled.form`
 
 const DivContainer = styled.div`
     display: flex;
-    flex: 1;
     gap: 1.375rem;
+    flex-wrap: wrap;
     margin-bottom: 1rem;
+`;
+
+const NameContainer =styled.div`
+    display: flex;
+    flex:2;
+    flex-direction: column;
 `;
 
 const FeedBackContainer = styled.div`
@@ -92,34 +98,43 @@ const FeedBackContainer = styled.div`
     }
 `;
 
-const NameContainer =styled.div`
-    display: flex;
-    flex:2;
-    flex-direction: column;
-`;
-
 const ContainerDate = styled.div`
     margin-bottom: 4rem;
     display: flex;
-    //flex: 2;
     gap: 2rem;
-   
+    flex-wrap: wrap;
 `;
 
 const ContaunerHourInputLabel = styled.div`
+    flex: 2;
     display: flex;
-    flex: 1;
     flex-direction: column;
 `;
 
 const ContainerHour = styled.div`
+    flex: 2;
     display: flex;
     gap: 0.625rem;
+    
 `;
 
 const ContainerDateTime = styled.div`
+    
     display: flex;
     flex-direction: column;
+
+    input[type="datetime"]{
+        max-width: 7.75rem;
+        height: 3.4rem;
+        border-radius: 8px;
+        font-size: 1rem;
+
+        border: 1px solid ${props=>props.theme.borderInput};
+        background-color: ${props=>props.theme.backgroundInput};
+
+        padding: 0 0.5rem;
+    }
+
 `;
 
 
@@ -174,7 +189,7 @@ export function Form(){
                     <ContainerDateTime>
                         <label htmlFor="hour2">Até</label>
                         <input type="datetime" name="" id="hour2" title="dateTime"/>
-                    </ContainerDateTime>
+                    </ContainerDateTime> 
 
                 </ContainerHour>
             </ContainerDate>
