@@ -12,10 +12,7 @@ const FormContainer = styled.form`
     margin: auto;
     border-radius: 0 0 20px 20px;
 
-    div{
-        display: flex;
-        
-    }
+  
 
     label{
         text-align: start;
@@ -53,7 +50,18 @@ const FormContainer = styled.form`
     textarea{
         margin-bottom: 1.9rem;
     }
-        
+     
+    button{
+        padding: 0.78rem 17.875rem;
+        color: ${props=>props.theme.white};
+        background-color: ${props=>props.theme.orange};
+        border: none;
+        border-radius: 8px;
+        font-family: 'Staatliches', cursive;
+        font-size: 1.25rem;
+        line-height: 1.625rem;
+        cursor: pointer;
+    }
    
 `;
 
@@ -90,7 +98,29 @@ const NameContainer =styled.div`
     flex-direction: column;
 `;
 
+const ContainerDate = styled.div`
+    margin-bottom: 4rem;
+    display: flex;
+    //flex: 2;
+    gap: 2rem;
+   
+`;
 
+const ContaunerHourInputLabel = styled.div`
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+`;
+
+const ContainerHour = styled.div`
+    display: flex;
+    gap: 0.625rem;
+`;
+
+const ContainerDateTime = styled.div`
+    display: flex;
+    flex-direction: column;
+`;
 
 
 export function Form(){
@@ -124,6 +154,32 @@ export function Form(){
                 <input type="checkbox" name="" id="checkbox" title="checkbox"/>
                 <label htmlFor="checkbox" id="labelCheckBox">Todas as minhas dúvidas foram esclarecidas durante a mentoria.</label>
             </FeedBackContainer>
+
+            <span>Agendando próxima mentoria</span>
+
+            <ContainerDate>
+
+                <ContaunerHourInputLabel>
+                    <label htmlFor="data">Data</label>
+                    <input type="date" name="" id="data" title="date"/>
+                </ContaunerHourInputLabel>
+
+                <ContainerHour>
+
+                    <ContainerDateTime>
+                        <label htmlFor="hour">Das</label>
+                        <input type="datetime" name="" id="hour" title="dateTime"/>
+                    </ContainerDateTime>
+
+                    <ContainerDateTime>
+                        <label htmlFor="hour2">Até</label>
+                        <input type="datetime" name="" id="hour2" title="dateTime"/>
+                    </ContainerDateTime>
+
+                </ContainerHour>
+            </ContainerDate>
+
+            <button type="submit">Salvar</button>
 
         </FormContainer>
     );

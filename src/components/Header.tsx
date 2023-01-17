@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from "styled-components"
+import imageHeader from "../assets/imageHeader.png"
 
 const HeaderContainer = styled.header`
     background-color: ${props=>props.theme.darkBlue};
@@ -44,6 +45,11 @@ const HeaderContainer = styled.header`
         max-width: 46.875rem;
         
     }
+
+    img{
+        margin-bottom: 2rem;
+        margin-top: 1rem;
+    }
 `;
 
 export function Header(){
@@ -51,6 +57,7 @@ export function Header(){
         <HeaderContainer>
             <h1>avalie a sua mentoria</h1>
             <span>Chegou a hora de avaliar o seu mentor. Bora lá?</span>
+            <img src={imageHeader} alt="" />
             <div>Informações pessoais</div>
         </HeaderContainer>
     );
