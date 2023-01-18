@@ -28,13 +28,18 @@ const FormContainer = styled.form`
         border: 1px solid ${props=>props.theme.borderInput};
         background-color: ${props=>props.theme.backgroundInput};
         padding: 0 0.5rem;
-        font-size: 1rem
+        font-size: 1rem;
+
     }
 
 
     input[title="mentor"]{
         margin-bottom: 1.9rem;
         width: 50%;
+
+        @media(max-width:499px) {
+            width: 100%;
+        }
     }
 
     span{
@@ -52,7 +57,7 @@ const FormContainer = styled.form`
     }
      
     button{
-        padding: 0.78rem 17.875rem;
+        padding: 0.78rem 0;
         color: ${props=>props.theme.white};
         background-color: ${props=>props.theme.orange};
         border: none;
@@ -61,6 +66,8 @@ const FormContainer = styled.form`
         font-size: 1.25rem;
         line-height: 1.625rem;
         cursor: pointer;
+
+        width: 100%;
     }
    
 `;
@@ -76,6 +83,8 @@ const NameContainer =styled.div`
     display: flex;
     flex:2;
     flex-direction: column;
+
+    width: 100%;
 `;
 
 const FeedBackContainer = styled.div`
@@ -100,21 +109,24 @@ const FeedBackContainer = styled.div`
 
 const ContainerDate = styled.div`
     margin-bottom: 4rem;
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
+    display: grid;
+    //grid-template-columns: 47.5% 47.5%;
+    grid-template-columns: repeat(auto-fit, minmax(10.5rem, 1fr));
+    grid-column-gap: 5%;
+    //gap:2rem;
+    //flex-wrap: wrap;
 `;
 
 const ContaunerHourInputLabel = styled.div`
-    flex: 2;
     display: flex;
     flex-direction: column;
 `;
 
 const ContainerHour = styled.div`
-    flex: 2;
-    display: flex;
-    gap: 0.625rem;
+    display: grid;
+    grid-template-columns: 48.2% 48.2%;
+    gap: 3.6%;
+    //gap: 0.625rem;
     
 `;
 
@@ -124,7 +136,7 @@ const ContainerDateTime = styled.div`
     flex-direction: column;
 
     input[type="datetime"]{
-        max-width: 7.75rem;
+        //max-width: 7.75rem;
         height: 3.4rem;
         border-radius: 8px;
         font-size: 1rem;
@@ -194,7 +206,9 @@ export function Form(){
                 </ContainerHour>
             </ContainerDate>
 
-            <button type="submit">Salvar</button>
+            <div>
+                <button type="submit">Salvar</button>
+            </div>
 
         </FormContainer>
     );

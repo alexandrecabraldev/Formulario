@@ -13,4 +13,8 @@ export const GlobalStyle = createGlobalStyle`
         padding: 0;
     }
 
+    input{
+        box-sizing: border-box;
+    }
+
 `;
